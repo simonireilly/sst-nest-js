@@ -3,8 +3,37 @@
 Composition of NestJS standalone with Vendia Serverless Express for demonstrating strong conventions applied to serverless applications.
 
 - [SST with NestJS](#sst-with-nestjs)
+  - [Usage](#usage)
+    - [Bootstrap](#bootstrap)
+    - [Adding a micro service](#adding-a-micro-service)
   - [Justification](#justification)
   - [Resources](#resources)
+
+## Usage
+
+### Bootstrap
+
+```
+npx create-serverless-stack@latest sst-nestjs --language typescript --use-yarn
+
+cd sst-nestjs
+
+yarn add @nestjs/cli @nestjs/common  @nestjs/core @nestjs/schematics @vendia/serverless-express
+```
+
+### Adding a micro service
+
+Lets create a micro service for an Order Management Service (OMS).
+
+```
+yarn nest generate lib oms
+```
+
+And add a resource for the order management service to store orders:
+
+```
+yarn nest generate res orders
+```
 
 ## Justification
 

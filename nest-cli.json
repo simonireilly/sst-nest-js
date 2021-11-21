@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "oms": {
+      "type": "library",
+      "root": "libs/oms",
+      "entryFile": "index",
+      "sourceRoot": "libs/oms/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/oms/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}

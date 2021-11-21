@@ -7,13 +7,25 @@ export default class MyStack extends sst.Stack {
     // Create a HTTP API
     const api = new sst.Api(this, "Api", {
       routes: {
-        "GET /": "src/lambda.handler",
+        "GET /": "src/standalone.handler",
+      },
+      defaultFunctionProps: {
+        bundle: {
+          externalModules: [
+            "@nestjs/microservices",
+            "@nestjs/websockets",
+            "nats",
+            "cache-manager",
+            "class-transformer",
+            "class-validator",
+          ],
+        },
       },
     });
 
     // Show the endpoint in the output
     this.addOutputs({
-      "ApiEndpoint": api.url,
+      ApiEndpoint: api.url,
     });
   }
 }
